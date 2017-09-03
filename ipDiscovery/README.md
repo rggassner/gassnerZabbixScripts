@@ -83,6 +83,7 @@ This will produce a csv file like this:
 
 This will create the Zabbix discovery rules as configured above.
 
+![](files/discovery.png)
 
 
     > Written with [StackEdit](https://stackedit.io/). 
