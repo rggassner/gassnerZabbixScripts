@@ -1,8 +1,8 @@
-#ipDiscovery
+# ipDiscovery
 
 This script has been developed to help fast Zabbix deploying, collecting SNMP data from network routers, and automatically creating discovery rules. It is also able to output csv and html reports.
 
-##Description
+## Description
 
 Zabbix has a useful network discovery feature, but if you have to manually insert and keep updated thousands of network classes, this task gets a bit tricky.
 
@@ -10,7 +10,7 @@ This script tries to solve this issue. It will iterate over all hosts on a previ
 
 All interaction with Zabbix is made through [PyZabbix](https://github.com/lukecyca/pyzabbix). You are able to configure including and excluding IP network ranges, those do not apply to the reporting options.
 
-##Instalation
+## Instalation
 
 In a debian based system:
 
@@ -21,7 +21,7 @@ In a debian based system:
     pip install ipaddress
     pip install pysnmp
 
-##Configuration
+## Configuration
 
 The following parameters are in the beginning of the ipDiscovery.py script file. Configure the Zabbix user that will run the script. Ensure that it has enough rights to see the hosts and to create the discovery rules:
 
@@ -58,7 +58,7 @@ Some devices can have hundreds of interfaces, so you can break them in many rule
 
     maxNetPerRule = 10
 
-##Usage
+## Usage
 
      ./ipDiscovery.py -h
     Usage: ipDiscovery.py [options]
@@ -67,11 +67,11 @@ Some devices can have hundreds of interfaces, so you can break them in many rule
       -h, --help            show this help message and exit
       -t TYPE, --type=TYPE  output type: html, csv or api [default: html]
     
-##./ipDiscovery .py -t html
+## ./ipDiscovery .py -t html
 
-This will produce a [Ajax searchable DataTable](https://datatables.net/examples/data_sources/ajax.html) as this example.
+This will produce a [Ajax searchable DataTable](https://datatables.net/examples/data_sources/ajax.html) as this [example](files/table.html).
 
-##./ipDiscovery.py -t csv
+## ./ipDiscovery.py -t csv
 
 This will produce a csv file like this:
 
@@ -79,7 +79,7 @@ This will produce a csv file like this:
     AdslRouter,12-ppp0,179.181.19.234/32
     AdslRouter,4-br0,192.168.1.1/24
 
-##./ipDiscovery.py -t api
+## ./ipDiscovery.py -t api
 
 This will create the Zabbix discovery rules as configured above.
 
