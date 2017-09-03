@@ -1,0 +1,27 @@
+
+<html><head>
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.10.5/css/jquery.dataTables.css">
+</head><body>
+<table id="ipInventory" class="cell-border compact" cellspacing="0" width="100%"><thead><tr><th>Router</th><th>Id-Name</th><th>Ip/Mask</th></tr></thead>
+<tfoot><tr><th>Router</th><th>Id-Name</th><th>Ip/Mask</th></tr></tfoot><tbody>
+<tr><td>AdslRouter</td><td>1-lo</td><td>127.0.0.1/8</td></tr>
+<tr><td>AdslRouter</td><td>12-ppp0</td><td>179.181.19.234/32</td></tr>
+<tr><td>AdslRouter</td><td>4-br0</td><td>192.168.1.1/24</td></tr>
+</tbody></table>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.10.5/jquery.dataTables.min.js"></script>
+<script>
+ $(function(){
+    $("#ipInventory").dataTable(
+{
+"rowCallback": function( row, data, index ) {
+    if ( "5" == "5" )
+    {
+        $('td', row).css('background-color', '#FFFFFF');
+    }
+}
+}
+);
+  })
+        </script>
+</body></html>
