@@ -160,7 +160,8 @@ def gen_report(router, community, name, rtype):
     global nameCounter
     rcounter=0
     ipRange=""
-    delete_existing_rules(name)
+    if (rtype == "api"):
+        delete_existing_rules(name)
     for (errorIndication,
         errorStatus,
         errorIndex,
