@@ -120,7 +120,7 @@ def print_body(rtype):
     if not hosts:
         print ("Empty list.")
         exit()
-    for s in zapi.host.get(output="extend", groupids=[groupid]):
+    for s in zapi.host.get(output="extend", groupids=[groupid], filter={"status": 0}):
 	name=(s['name'])
 	hostid=(s['hostid'])
 	for i in zapi.hostinterface.get(hostids=[hostid],filter={"type": 2}):
