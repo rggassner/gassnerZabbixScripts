@@ -12,3 +12,8 @@ Zabbix automatic network discovery inserts an IP address, or the reverse resolve
 ## zabbixKibanaDictionaries
 
 Script to generate logstash dictionaries from zabbix host names and host groups. These data can be used in elastic search and Kibana reports.
+
+## upTimePort
+
+Script to generate one report for each switch in a given Zabbix group, and show all ports that are without use for more than a time period.
+
