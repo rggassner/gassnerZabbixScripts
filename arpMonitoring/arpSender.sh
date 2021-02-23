@@ -8,7 +8,7 @@
 # are still beeing created in zabbix server.
 #With the script and template, you will be able to:
 # - Detect newly connected devices on the network.
-# - Have a history of which macs were used by which ips and vice versa.
+# - Have a history of which macs were used by which ips and the other way around.
 # - Detect if there are multiple ips associated to the same mac.
 # - Detect if there are multiple macs associated to the same ip address.
 # - Identify the active period on the network for each device.
