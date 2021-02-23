@@ -17,3 +17,11 @@ Script to generate logstash dictionaries from zabbix host names and host groups.
 
 Script to generate one report for each switch in a given Zabbix group, and show all ports that are without use for more than a time period.
 
+## arpMonitoring
+
+Script and Zabbix template using LLD to:
+ - Detect newly connected devices on the network.
+ - Have a history of which macs were used by which ips and vice versa.
+ - Detect if there are multiple ips associated to the same mac.
+ - Detect if there are multiple macs associated to the same ip address.
+ - Identify the active period on the network for each device.
