@@ -27,7 +27,7 @@ sender="/usr/bin/zabbix_sender"
 
 fullData=`for iface in $interfaces
 do
-        $arp_scan --localnet --interface=$iface -q -x
+        $arp_scan --localnet --interface=$iface -q -x | sort | uniq
 done`
 IFS=$'\n'
 first=1
