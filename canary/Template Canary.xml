@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2021-03-05T10:35:14Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Canary</template>
+            <name>Template Canary</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Canary files</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>fuser</name>
+                    <type>TRAP</type>
+                    <key>canary.fuser[]</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                    <description>Show fuser for all the pids using the file</description>
+                    <applications>
+                        <application>
+                            <name>Canary files</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>lsofile</name>
+                    <type>TRAP</type>
+                    <key>canary.lsofile[]</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                    <description>Show lsof for the canary file that triggered.</description>
+                    <applications>
+                        <application>
+                            <name>Canary files</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>lsof</name>
+                    <type>TRAP</type>
+                    <key>canary.lsof[]</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                    <description>Show lsof for all the files (First one thousand lines)</description>
+                    <applications>
+                        <application>
+                            <name>Canary files</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>netstat</name>
+                    <type>TRAP</type>
+                    <key>canary.netstat[]</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                    <description>Show output of &quot;netstat -tupan&quot; (First one thousand lines)</description>
+                    <applications>
+                        <application>
+                            <name>Canary files</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>ps</name>
+                    <type>TRAP</type>
+                    <key>canary.ps[]</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                    <description>Show &quot;ps -ef f&quot; output (First one thousand lines)</description>
+                    <applications>
+                        <application>
+                            <name>Canary files</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Canary status</name>
+                    <type>TRAP</type>
+                    <key>canary.status[]</key>
+                    <delay>0</delay>
+                    <history>7d</history>
+                    <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                    <description>Status used for triggers. &#13;
+1 - Canary is dead&#13;
+0 - Canary is alive</description>
+                    <applications>
+                        <application>
+                            <name>Canary files</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{max(3600)}=1</expression>
+                            <name>Canary file was accessed in the last hour</name>
+                            <priority>HIGH</priority>
+                            <tags>
+                                <tag>
+                                    <tag>feature</tag>
+                                    <value>canary</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>top</name>
+                    <type>TRAP</type>
+                    <key>canary.top[]</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                    <description>&quot;top&quot; command when canary file was triggered.</description>
+                    <applications>
+                        <application>
+                            <name>Canary files</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>who</name>
+                    <type>TRAP</type>
+                    <key>canary.who[]</key>
+                    <delay>0</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                    <description>&quot;who -a&quot; command when canary file was triggered.</description>
+                    <applications>
+                        <application>
+                            <name>Canary files</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+            <tags>
+                <tag>
+                    <tag>attack</tag>
+                    <value>data breach</value>
+                </tag>
+                <tag>
+                    <tag>feature</tag>
+                    <value>canary</value>
+                </tag>
+                <tag>
+                    <tag>service</tag>
+                    <value>DLP</value>
+                </tag>
+                <tag>
+                    <tag>team</tag>
+                    <value>security</value>
+                </tag>
+            </tags>
+        </template>
+    </templates>
+</zabbix_export>
