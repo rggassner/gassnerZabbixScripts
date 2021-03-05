@@ -9,7 +9,6 @@
 {
     flock -n 100 || exit
     maxLines=900
-    files="/tmp/1 /tmp/2"
     sender="/usr/bin/zabbix_sender"
     conf="/etc/zabbix/zabbix_agentd.conf"
     spath="/usr/src/canary"
