@@ -25,3 +25,14 @@ Script and Zabbix template using LLD to:
  - Detect if there are multiple ips associated to the same mac.
  - Detect if there are multiple macs associated to the same ip address.
  - Identify the active period on the network for each device.
+
+## canary
+
+Script and Zabbix template to:
+ - Detect actions on canary files, read, write or open.
+ - Support for multiple files monitoring.
+ - Avoid multiple simultaneous execution of the script using flock.
+ - Sends information to zabbix only when incident happens, for monitoring resource optimization.
+ - Records information from inotify, top, netstat, lsof, who, ps and fuser upon event detection.
+ - Dependencies: inotify-tools, flock, zabbix_sender
+
