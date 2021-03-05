@@ -12,8 +12,9 @@
     files="/tmp/1 /tmp/2"
     sender="/usr/bin/zabbix_sender"
     conf="/etc/zabbix/zabbix_agentd.conf"
+    spath="/usr/src/canary"
     $sender -c $conf -k canary.status[] -o "0" &
-    inotifywait --format '%w,%-e' -m -q --fromfile files2monitor | \
+    inotifywait --format '%w,%-e' -m -q --fromfile $spath/files2monitor | \
         while IFS= read -r event
         do 
             echo $event
@@ -30,6 +31,6 @@
             $sender -c $conf -k canary.lsof[] -o "`echo filename: $filename - event: $event - command: lsof -n; lsof -n | head -n $maxLines`" &
             $sender -c $conf -k canary.netstat[] -o "`echo filename: $filename - event: $event - command: netstat -tupan; netstat -tupan | head -n $maxLines`" &
             $sender -c $conf -k canary.status[] -o "1" &
-            pkill -f 'inotifywait --format %w,%-e -m -q --fromfile files2monitor'
+            pkill -f 'inotifywait --format %w,%-e -m -q --fromfile $spath/files2monitor'
         done
 } 100>/tmp/notify.lock 
