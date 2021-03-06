@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-03-05T10:35:14Z</date>
+    <date>2021-03-06T00:12:15Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -114,7 +114,8 @@
                     </applications>
                     <triggers>
                         <trigger>
-                            <expression>{max(3600)}=1</expression>
+                            <expression>{max(3600)}=1 and&#13;
+{nodata(3600)}=0</expression>
                             <name>Canary file was accessed in the last hour</name>
                             <priority>HIGH</priority>
                             <tags>
