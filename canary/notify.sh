@@ -5,6 +5,10 @@
 #execute several commands to help identify the source of the access.
 #This script should be run by cron every minute.
 #The file files2monitor should contain the files to monitor, all in one line, space separated.
+#
+#If you have problems using flock, you can avoid simultaneous execution with:
+#* * * * *   root  lsof /opt/notify.sh || /opt/notify.sh >/dev/null 2>&1
+#
 #Dependencies: inotify-tools, flock, zabbix_sender
 {
     flock -n 100 || exit
