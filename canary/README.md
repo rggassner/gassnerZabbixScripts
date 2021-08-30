@@ -1,4 +1,4 @@
-Monitor when a file, or set of files, are accessed and upon detection execute several commands to help identify the source of the access.
+Monitor when a file, or set of files, are accessed and upon detection execute several commands to help identify the source of the access. This script can be used to monitor decoy files, for cybersecurity reasons.
 
 This script should be run by cron every minute.
 
