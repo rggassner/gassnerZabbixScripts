@@ -16,7 +16,7 @@ You will want to configure Open Hardware Monitor to:
 - Log sensors
 
 Tested with:
-Open Hardware Monitor v0.9.6 
-Zabbix 5.0.8 
-python 3.8.10
-pyzabbix 0.8.2
+- Open Hardware Monitor v0.9.6 - https://openhardwaremonitor.org/
+- Zabbix 5.0.8 
+- python 3.8.10
+- pyzabbix 0.8.2
