@@ -36,3 +36,7 @@ Script and Zabbix template to:
  - Records information from inotify, top, netstat, lsof, who, ps and fuser upon event detection.
  - Dependencies: inotify-tools, flock, zabbix_sender
 
+## ZabbixOpenHardwareMonitor
+
+Script and Zabbix template to monitor Open Hardware Monitor.
+
