@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2022-01-05T02:26:55Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Palo Alto VPN</template>
+            <name>Template Palo Alto VPN</name>
+            <description>Rafael Gustavo Gassner 01/2022&#13;
+This script monitors Palo Alto VPN using a python script that collects data from web api.</description>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Palo Alto VPN</name>
+                </application>
+            </applications>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Palo Alto VPN Discovery</name>
+                    <type>TRAP</type>
+                    <key>pavpn.discovery</key>
+                    <delay>0</delay>
+                    <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>GWID {#NAME}</name>
+                            <type>TRAP</type>
+                            <key>pavpn.gwid[{#KEY}]</key>
+                            <delay>0</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                            <applications>
+                                <application>
+                                    <name>Palo Alto VPN</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>ID {#NAME}</name>
+                            <type>TRAP</type>
+                            <key>pavpn.id[{#KEY}]</key>
+                            <delay>0</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                            <applications>
+                                <application>
+                                    <name>Palo Alto VPN</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Inner Interface {#NAME}</name>
+                            <type>TRAP</type>
+                            <key>pavpn.inner-if[{#KEY}]</key>
+                            <delay>0</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                            <applications>
+                                <application>
+                                    <name>Palo Alto VPN</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Local IP {#NAME}</name>
+                            <type>TRAP</type>
+                            <key>pavpn.localip[{#KEY}]</key>
+                            <delay>0</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                            <applications>
+                                <application>
+                                    <name>Palo Alto VPN</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Mon {#NAME}</name>
+                            <type>TRAP</type>
+                            <key>pavpn.mon[{#KEY}]</key>
+                            <delay>0</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                            <applications>
+                                <application>
+                                    <name>Palo Alto VPN</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Outer Interface {#NAME}</name>
+                            <type>TRAP</type>
+                            <key>pavpn.outer-if[{#KEY}]</key>
+                            <delay>0</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                            <applications>
+                                <application>
+                                    <name>Palo Alto VPN</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Owner {#NAME}</name>
+                            <type>TRAP</type>
+                            <key>pavpn.owner[{#KEY}]</key>
+                            <delay>0</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                            <applications>
+                                <application>
+                                    <name>Palo Alto VPN</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Peer IP {#NAME}</name>
+                            <type>TRAP</type>
+                            <key>pavpn.peerip[{#KEY}]</key>
+                            <delay>0</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                            <applications>
+                                <application>
+                                    <name>Palo Alto VPN</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>State {#NAME}</name>
+                            <type>TRAP</type>
+                            <key>pavpn.state[{#KEY}]</key>
+                            <delay>0</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <allowed_hosts>10.0.0.0/8,192.168.0.0/16,127.0.0.0/8</allowed_hosts>
+                            <applications>
+                                <application>
+                                    <name>Palo Alto VPN</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                    </item_prototypes>
+                    <lld_macro_paths>
+                        <lld_macro_path>
+                            <lld_macro>{#KEY}</lld_macro>
+                            <path>$.key</path>
+                        </lld_macro_path>
+                        <lld_macro_path>
+                            <lld_macro>{#NAME}</lld_macro>
+                            <path>$.name</path>
+                        </lld_macro_path>
+                    </lld_macro_paths>
+                </discovery_rule>
+            </discovery_rules>
+        </template>
+    </templates>
+</zabbix_export>
