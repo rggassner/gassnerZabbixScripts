@@ -38,7 +38,6 @@ for vpn in data['response']['result']['IPSec']['entry']:
     lld=lld+'"key":"'+vpn['name']+'"'
     lld=lld+'}'
 lld=lld+']}'
-print(lld)
 packet.append(ZabbixMetric(THIS_HOST,'pavpn.discovery',lld,ctime))
 
 
