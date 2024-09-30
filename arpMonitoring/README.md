@@ -1,10 +1,19 @@
 This script activelly scans arp and sends to zabbix server using zabbix_sender.
 
-arp-scan should be installed and interfaces variable should be configured for your environment.
+# Installing on monitoring host:
 
-You will want to run every 10 minutes or so, using crontab.
+- Install arp-scan
+- Install zabbix-sender
+- Install and configure zabbix-agent
+- Configure "interfaces" variable in arpMonitoring.sh
+- Set crontab to run the arpMonitoring.sh every ten minutes or so.
 
-First run(s) might not populate data, since LLD items are still beeing created in zabbix server.
+# Configurations on Zabbix-Server:
+
+- Import Template ARP Monitoring.xml into the templates
+- Associate the template with the host that will monitor arp.
+
+Run some times manually so Zabbix will create the LLD items and start populating them.
 
 With the script and template, you will be able to:
  - Detect newly connected devices on the network.
