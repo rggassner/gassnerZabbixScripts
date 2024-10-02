@@ -1,0 +1,41 @@
+zabbix_export:
+  version: '7.0'
+  template_groups:
+    - uuid: 7df96b18c230490a9a0a9e2307226338
+      name: Templates
+  templates:
+    - uuid: f617ad893d9c4da5a087b547b5635fb8
+      template: 'Iperf Monitoring'
+      name: 'Iperf Monitoring'
+      groups:
+        - name: Templates
+      items:
+        - uuid: 03fc0fca74304bd483b408e77f5f4e63
+          name: iperf3.sum_received.bits_per_second
+          type: TRAP
+          key: iperf3.sum_received.bits_per_second
+          delay: '0'
+          value_type: FLOAT
+          units: bps
+          tags:
+            - tag: application
+              value: iperf3
+        - uuid: 1b796e7ab2d34ce7b2c0620b9bb72cd9
+          name: iperf3.sum_sent.bits_per_second
+          type: TRAP
+          key: iperf3.sum_sent.bits_per_second
+          delay: '0'
+          value_type: FLOAT
+          units: bps
+          tags:
+            - tag: application
+              value: iperf3
+        - uuid: b10c3bd94e89450495d90215ea8bbdbe
+          name: iperf3.sum_sent.retransmits
+          type: TRAP
+          key: iperf3.sum_sent.retransmits
+          delay: '0'
+          units: ret
+          tags:
+            - tag: application
+              value: iperf3
